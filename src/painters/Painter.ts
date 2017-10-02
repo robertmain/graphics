@@ -1,3 +1,3 @@
 export default interface Painter{
-    paint() : void;
+    drawLine(startX : number, startY : number, endX : number, endY : number) : void;
 }
