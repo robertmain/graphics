@@ -1,6 +1,6 @@
 import Painter from './Painter';
 import * as pureimage from 'pureimage';
-import Line from 'pureimage/src/Line';
+import * as Line from 'pureimage/src/Line';
 import * as COLORS from 'pureimage/src/named_colors';
 import fs = require("fs");
 
