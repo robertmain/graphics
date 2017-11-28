@@ -1,5 +1,7 @@
 import Painter from './Painter';
 import * as pureimage from 'pureimage';
+import Line from 'pureimage/src/Line';
+import * as COLORS from 'pureimage/src/named_colors';
 import fs = require("fs");
 
 export default class PureImagePainter implements Painter{
@@ -15,19 +17,10 @@ export default class PureImagePainter implements Painter{
         this.image    = pureimage.make(width, height);
         this.context  = this.image.getContext('2d');
     }
-    
+
     public drawLine(startX: number, startY: number, endX: number, endY: number) : void {
-        this.context._strokeColor = '0xFFFFFF';
-        this.context.drawLine({
-            start: {
-                x: startX,
-                y: startY
-            },
-            end: {
-                x: endX,
-                y: endY
-            }
-        });
+        this.context._strokeColor = COLORS.white;
+        this.context.drawLine(new Line(startX, startY, endX, endY));
 
         pureimage.encodePNGToStream(this.image, fs.createWriteStream(this.fileName)).then(()=> {
             return true;
