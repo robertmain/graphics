@@ -2,18 +2,14 @@ import Shape from './Shape';
 import Painter from '../painters/Painter';
 
 export default class Rectangle extends Shape{
-    
-    private x     : number;
-    private y     : number;
-    private width : number;
-    private height: number;
-    
-    public constructor(x : number, y : number, width :number, height :number) {
+
+    public constructor(
+        readonly x     : number,
+        readonly y     : number,
+        readonly width : number,
+        readonly height: number
+    ){
         super();
-        this.x     = x;
-        this.y     = y;
-        this.width = width;
-        this.height = height;
     }
 
     public paint(painter :Painter): void {
