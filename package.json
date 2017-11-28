@@ -25,6 +25,6 @@
     "webpack-dev-server": "^2.7.1"
   },
   "dependencies": {
-    "pureimage": "^0.1.3"
+    "pureimage": "git+https://github.com/joshmarinacci/node-pureimage.git#master"
   }
 }
