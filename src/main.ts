@@ -1,5 +1,12 @@
 import Square  from "./shapes/Square";
+import PureImagePainter from './painters/PureImagePainter';
 
-// let s = new Square(20, 200, 200);
+let myPainter = new PureImagePainter(1000, 1000, 'helloworld.png');
 
-// console.log(s.calculateArea());
+for(let i=0; i<=10; i++) {
+    console.log('Painting square ' + i + '...');
+    let previousSquareWidth = (i - 1)*10;
+    let offset = previousSquareWidth + 10;
+    let square = new Square(offset, i *10, i*40);
+    square.paint(myPainter);
+}
