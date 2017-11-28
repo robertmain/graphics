@@ -2,10 +2,15 @@
   "name": "graphics",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build:web": "rm -rf dist && webpack",
+    "build:server": "rm -rf dist && tsc --outDir $npm_package_config_dist_dir",
+    "start": "npm run-script build:server && node $npm_package_config_dist_dir/$npm_package_main"
+  },
+  "config": {
+      "dist_dir": "dist/"
   },
   "author": "",
   "license": "ISC",
